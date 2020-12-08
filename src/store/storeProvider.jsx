@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
-import request from '../helpers/reques';
+import request from '../helpers/request';
 
-const StoreContex = createContext(null);
+export const StoreContext = createContext(null);
 const StoreProvider = ({ children }) => {
 	const [courses, setCourses] = useState([]);
 	const [user, setUser] = useState(null);
@@ -16,9 +16,9 @@ const StoreProvider = ({ children }) => {
 	}, []);
 
 	return (
-		<StoreContex.Provider value={(courses, setCourses, user, setUser)}>
+		<StoreContext.Provider value={{ courses, setCourses, user, setUser }}>
 			{children}
-		</StoreContex.Provider>
+		</StoreContext.Provider>
 	);
 };
 
