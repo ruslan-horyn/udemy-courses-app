@@ -1,9 +1,18 @@
 import React from 'react';
-import "./App.scss";
+import StoreProvider from './store/StoreProvider';
 
+import './App.scss';
+import Header from './components/Header/Header';
 
 const App = () => {
-	return <header>Heloo World</header>;
+	
+	return (
+		<>
+			<StoreProvider>
+				<Header />
+			</StoreProvider>
+		</>
+	);
 };
 
 export default App;
