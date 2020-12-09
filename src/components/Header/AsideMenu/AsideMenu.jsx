@@ -10,7 +10,6 @@ import { default as AsideMenuStyle } from './AsideMenu.module.scss';
 const style = bemCssmodule(AsideMenuStyle);
 
 const AsideMenu = () => {
-	// debugger
 	const { user } = useContext(StoreContext);
 
 	const ADMIN_TUPE = 1;
@@ -19,8 +18,10 @@ const AsideMenu = () => {
 		user?.accessLevel === ADMIN_TUPE ? <AdminMenu /> : null;
 	return (
 		<section className={style()}>
-			<UserMenu isUserlogged={Boolean(user)} />
-			{adminMenuComponent}
+			<div className={style('nav-wrapper')}>
+				<UserMenu isUserlogged={Boolean(user)} />
+				{adminMenuComponent}
+			</div>
 		</section>
 	);
 };
