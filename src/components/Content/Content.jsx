@@ -6,6 +6,7 @@ import { default as ContentStyle } from './Content.module.scss';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 import Courses from '../Courses/Courses';
+import UserCourses from '../UserCourses/UserCourses';
 
 const style = bemCssModules(ContentStyle);
 const ADMIN_TYPE = 1;
@@ -19,7 +20,7 @@ const Content = () => {
 			<Switch>
 				<Route exact path='/' render={() => <Courses />} />
 				{isUserlogged && (
-					<Route path='/my-courses' render={() => <p>Moje Kursy</p>} />
+					<Route path='/my-courses' render={() => <UserCourses />} />
 				)}
 				{isAdmin && (
 					<Route
