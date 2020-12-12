@@ -7,6 +7,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { StoreContext } from '../../store/StoreProvider';
 import Courses from '../Courses/Courses';
 import UserCourses from '../UserCourses/UserCourses';
+import AdminPanel from '../AndinPanel/AdminPanel';
 
 const style = bemCssModules(ContentStyle);
 const ADMIN_TYPE = 1;
@@ -23,10 +24,7 @@ const Content = () => {
 					<Route path='/my-courses' render={() => <UserCourses />} />
 				)}
 				{isAdmin && (
-					<Route
-						path='/manage-courses'
-						render={() => <p>Zarządzanie kursami</p>}
-					/>
+					<Route path='/manage-courses' render={() => <AdminPanel />} />
 				)}
 
 				<Redirect to='/' />
