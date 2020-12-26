@@ -1,3 +1,7 @@
+### Udemy courses app in React
+
+---
+
 To run the project, simply run the following commands
 
 1. cd backend
